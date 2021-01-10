@@ -1,0 +1,23 @@
+{
+  "name": "web-locks-polyfill",
+  "version": "0.0.1",
+  "description": "A polyfill for web-locks",
+  "main": "web-locks-polyfill",
+  "scripts": {
+    "build": "node build.js",
+    "preversion": "npm run build",
+    "version": "git commit -am \"Update version number\" && git checkout -b release && git add -f dist/",
+    "postpublish": "git push --tags && git checkout master && git branch -D release && git push origin master",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bitovi",
+  "license": "MIT",
+  "devDependencies": {
+    "steal": "^2.2.4",
+    "steal-qunit": "^2.0.0",
+    "steal-tools": "^2.2.6"
+  }
+}
