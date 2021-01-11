@@ -265,7 +265,7 @@ export default function makeLocksRequest( {
       if(!COMPLETED_STATES[lockRequest.state]) {
         lockRequest.state = "unlocked";
         removeItem(lockRequest.innerKey);
-        lockRequest.resolve();
+        lockRequest.resolve(value);
       }
     };
   }
@@ -353,7 +353,7 @@ export default function makeLocksRequest( {
 }
 
 function debug(){
-  if(true) {
+  if(false) {
     console.log.apply(console, [""+new Date().getTime(), ...arguments]);
   }
 }
