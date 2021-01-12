@@ -271,9 +271,11 @@ export default function makeLocksRequest( {
   }
   function makeReleaseRejectedTask(lockRequest) {
     return function releaseRejectedTask(reason) {
+      
       debug(lockRequest.id, "unlocked-error");
       crossTabDebugger.onunlock()
       if(!COMPLETED_STATES[lockRequest.state]) {
+        removeItem(lockRequest.innerKey);
         lockRequest.state = "unlocked";
         lockRequest.reject(reason);
       }

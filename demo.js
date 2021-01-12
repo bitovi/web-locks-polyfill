@@ -1,5 +1,5 @@
-const TRY_TO_DO_SOMETHING_EVERY_MS = 5000;
-const HOW_LONG_DOES_IT_TAKE = 1000;
+const TRY_TO_DO_SOMETHING_EVERY_MS = 10000;
+const HOW_LONG_DOES_IT_TAKE = 8000;
 
 function doSomething(){
   return new Promise(function(resolve){
@@ -36,7 +36,9 @@ function checkTime(){
     navigator.locks.request("my-locker", async function(){
       //console.log(window.location.pathname, myCount, "RUNNING" );
       div.style.backgroundColor = "yellow";
+
       await doSomething();
+      throw "there's a problem";
       //console.log(window.location.pathname, myCount, "COMPLETING" );
 
     }).then(()=> {
