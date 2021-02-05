@@ -1,6 +1,6 @@
 import makeLocksRequest from "./make-locks-request.js";
 
-if(!navigator.locks) {
+if(typeof navigator !== "undefined" && !navigator.locks) {
   navigator.locks = {
     request: makeLocksRequest({storage: localStorage, memorySafe: false}),
     get query(){
