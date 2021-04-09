@@ -1,6 +1,6 @@
 {
   "name": "web-locks-polyfill",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A polyfill for web-locks",
   "type": "module",
   "main": "web-locks-polyfill",
