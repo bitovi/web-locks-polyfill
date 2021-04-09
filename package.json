@@ -2,9 +2,15 @@
   "name": "web-locks-polyfill",
   "version": "0.0.10",
   "description": "A polyfill for web-locks",
+  "type": "module",
   "main": "web-locks-polyfill",
+  "homepage": "https://github.com/bitovi/web-locks-polyfill",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitovi/web-locks-polyfill.git"
+  },
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.cjs",
     "preversion": "npm run build",
     "version": "git commit -am \"Update version number\" && git checkout -b release && git add -f dist/",
     "postpublish": "git push --tags && git checkout main && git branch -D release && git push origin main",
